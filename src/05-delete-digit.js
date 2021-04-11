@@ -28,6 +28,4 @@ function deleteDigit(n) {
   return Number(arr.join(''));
 }
 
-// console.log(deleteDigit(152));
-
 module.exports = deleteDigit;
