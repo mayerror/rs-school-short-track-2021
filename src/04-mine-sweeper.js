@@ -64,5 +64,4 @@ function minesweeper(matrix) {
   return resultMatrix;
 }
 
-
 module.exports = minesweeper;
