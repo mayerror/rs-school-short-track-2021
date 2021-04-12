@@ -10,27 +10,27 @@
  * For l = [3, 1, 2, 3, 4, 5] and l = 3,
  * the output should be [1, 2, 4, 5]
  *
- * Singly - linked lists are already defined with this interface
- * function ListNode(x) {
- *   this.value = x;
- *   this.next = null;
- * }
- */
+ * Singly - linked lists are already defined with this interface */
+
+function ListNode(x) {
+  this.value = x;
+  this.next = null;
+}
 
 function removeKFromList(l, k) {
-  let arr =[];
-  while (l.next != null) {
-    if (l.value === k) {
-      l = l.next;
-      continue;
+  const arr = [];
+  let list = l;
+  while (list != null) {
+    if (list.value === k) {
+      list = list.next;
     } else {
-      arr.push(l.value);
-      l = l.next;
+      arr.push(list.value);
+      list = list.next;
     }
   }
-  return arr.reverse().reduce((acc,cur) => {
+  return arr.reverse().reduce((acc, cur) => {
     if (acc) {
-      const node = new LisrNode(cur);
+      const node = new ListNode(cur);
       node.next = acc;
       return node;
     }
